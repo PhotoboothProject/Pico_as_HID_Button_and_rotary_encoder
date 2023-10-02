@@ -30,7 +30,7 @@ After having installed the software you can find out the input ID of your "Raspb
 
 sudo evsieve --input /dev/input/event* --print
 
-Just press a push button to find out. Important is the number (=*) in "domain = /dev/input/event*".
+Just press a push button to find out. Important is the number at the end of "domain = /dev/input/event*".
 
 Copy the bash script rotary.sh, make it executable with sudo chmod +x rotary.sh and change the * in the second line with your event number of the Pico. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh). Finally use systemd unit to run the script on bootup: Change the path of the rotary.sh in the file script.service and copy it to /etc/systemd/system/. After copying enable it via the systemctl command: sudo systemctl enable script.service
 
