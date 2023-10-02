@@ -24,7 +24,7 @@ The keystrokes "T" for Take Pic and "C" for Collage are triggered by short and l
 Optional, if you want to use the rotary encoder for control on the user interface:
 The rotary encoder triggers the key codes ENTER with a short press of the encoder pushbutton and ESC with a long press. A left turn (counterclockwise) triggers LEFT_ARROW and a right turn (clockwise) triggers RIGHT_ARROW. 
 Unfortunately, the photobooth software does not implement a control option via keyboard commands. However, it allows control through the user interface via HTTP requests. With a little trick, the previous keyboard commands can be converted into HTTP requests. 
-For this purpose you can install the software Evsieve from Kars Muder (https://github.com/KarsMulder/evsieve). It converts the USB HID device into a virtual event device and allows to execute a script when a predefined key is pressed.
+For this purpose you can install the software Evsieve from Kars Mulder (https://github.com/KarsMulder/evsieve). It converts the USB HID device into a virtual event device and allows to execute a script when a predefined key is pressed.
 
 After having installed the software you can find out the input ID of your "Raspberry Pico W Keyboard" with the follwoing command: 
 
