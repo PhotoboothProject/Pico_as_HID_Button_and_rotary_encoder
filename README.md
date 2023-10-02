@@ -1,5 +1,5 @@
 # Raspberry Pi Pico / Pico W as HID device: Use of Hardware Buttons and Rotary Encoder
-This a Raspberry Pi Pico / pico W CiruitPython code for using the Pico / Pico W as a USB HID device in the Photobooth Project of Andreas Blaesius (https://photoboothproject.github.io). You can connect several Buttons or a Rotary Encoder to trigger different actions.
+This a Raspberry Pi Pico / Pico W CiruitPython code for using the Pico / Pico W as a USB HID device in the Photobooth Project of Andreas Blaesius (https://photoboothproject.github.io). You can connect several Buttons or a Rotary Encoder to trigger different actions.
 
 Preparation:
 
@@ -32,7 +32,7 @@ sudo evsieve --input /dev/input/event* --print
 
 Just press a push button to find out. Important is the number at the end of "domain = /dev/input/event*".
 
-Copy the bash script rotary.sh, make it executable with sudo chmod +x rotary.sh and change the * in the second line with your event number of the Pico. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh). Finally use systemd unit to run the script on bootup: Change the path of the rotary.sh in the file script.service and copy it to /etc/systemd/system/. After copying enable it via the systemctl command: sudo systemctl enable script.service
+Copy the bash script rotary.sh, make it executable with sudo chmod +x rotary.sh and change the * in the second line with the event number of the Pico HID keyboard device. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh). Finally use systemd unit to run the script on bootup: Change the path of the rotary.sh in the file script.service and copy it to /etc/systemd/system/. After copying enable it via the systemctl command: sudo systemctl enable script.service
 
 Any problems? Make sure that the Pico CIRCUITPY drive is mounted automatically...
 
