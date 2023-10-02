@@ -1,0 +1,13 @@
+[Unit]
+
+Description=Rotary Encoder for Photobooth
+
+After=default.target
+
+[Service]
+
+ExecStart=/PATH/TO/rotary.sh
+
+[Install]
+
+WantedBy=default.target
