@@ -1,5 +1,5 @@
 #!/bin/bash
-evsieve --input /dev/input/event2 grab \
+evsieve --input /dev/input/by-id/usb-Raspberry_Pi_Pico_E6614C311B1C7C37-if03-event-kbd grab \
         --hook key:t exec-shell="curl 127.0.0.1:14711/commands/start-picture" \
         --hook key:c exec-shell="curl 127.0.0.1:14711/commands/start-collage" \
         --hook key:p exec-shell="curl 127.0.0.1:14711/commands/start-print" \
