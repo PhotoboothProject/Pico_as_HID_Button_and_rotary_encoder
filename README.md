@@ -21,7 +21,7 @@ The keystrokes "T" for Take Pic and "C" for Collage are triggered by short and l
 - Key code which triggers custom URL: u = 85
 - Key code which triggers shutdown: s = 83
 
-Optional, if you want to use the rotary encoder for control on the user interface:
+Optional, if you want to use the rotary encoder to control the user interface:
 The rotary encoder triggers the key codes ENTER with a short press of the encoder pushbutton and ESC with a long press. A left turn (counterclockwise) triggers LEFT_ARROW and a right turn (clockwise) triggers RIGHT_ARROW. 
 Unfortunately, the photobooth software has not implemented a control option via keyboard commands. However, it allows control through the user interface via HTTP requests. With a little trick, the previous keyboard commands can be converted into HTTP requests. For this purpose install the software Evsieve from Kars Mulder (https://github.com/KarsMulder/evsieve). It converts the USB HID device into a virtual event device and allows to execute HTTP request commands when predefined keys are pressed.
 
