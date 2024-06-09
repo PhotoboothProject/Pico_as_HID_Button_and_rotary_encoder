@@ -44,6 +44,7 @@ Exec=/path/to/rotary.sh
 Icon=/var/www/html/resources/img/favicon-96x96.png
 StartupNotify=false
 
+If it does not work: Pleae make sure that the "Remote Buzzer Server" is activated in your Photobooth. Deactivate the "GPIO support for remotebuzzer" server and activate "hardware buttons", the "rotary encoder" and additional buttons.
 
 
 
