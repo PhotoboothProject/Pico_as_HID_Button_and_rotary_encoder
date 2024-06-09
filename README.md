@@ -31,7 +31,7 @@ Then add the line "username ALL=NOPASSWD: /usr/local/bin/evsieve" at the end of 
 
 Start the script in terminal with "sh /PATH/TO/rotary.sh". Chromium browser should start and the rotary encoder should be avaiable. If you want to use another browser, change the command in the second line.
 
-Finally, if you want to start Chomium and the rotary.sh-script autmatically, change or create the photobooth.desktop file:
+Finally, if you want to start Chomium and the rotary.sh script autmatically, change or create the xga-autostart photobooth.desktop file:
 
 sudo nano /etc/xdg/autostart/photobooth.desktop
 
