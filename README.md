@@ -25,7 +25,7 @@ Optional, if you want to use the rotary encoder for control on the user interfac
 The rotary encoder triggers the key codes ENTER with a short press of the encoder pushbutton and ESC with a long press. A left turn (counterclockwise) triggers LEFT_ARROW and a right turn (clockwise) triggers RIGHT_ARROW. 
 Unfortunately, the photobooth software has not implemented a control option via keyboard commands. However, it allows control through the user interface via HTTP requests. With a little trick, the previous keyboard commands can be converted into HTTP requests. For this purpose install the software Evsieve from Kars Mulder (https://github.com/KarsMulder/evsieve). It converts the USB HID device into a virtual event device and allows to execute HTTP request commands when predefined keys are pressed.
 
-After having installed the software, copy the rotary.sh bash script, make it executable with "sudo chmod +x rotary.sh" and change the ID mentioned in the third line with the specific ID of your Pico / Pico W keyboard device. You can find it in the folder /dev/input/by-ID. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh). 
+After having installed the software, copy the rotary.sh bash script, make it executable with "sudo chmod +x rotary.sh" and change the ID mentioned in the third line with the specific ID of your Pico / Pico W keyboard device. You can find it in the folder /dev/input/by-ID. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh) as defined on the Photobooth´s admin page. 
 
 Then add the line "username ALL=NOPASSWD: /usr/local/bin/evsieve" at the end of /etc/sudoers (sudo nano /etc/sudoers).
 
