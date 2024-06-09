@@ -23,16 +23,31 @@ The keystrokes "T" for Take Pic and "C" for Collage are triggered by short and l
 
 Optional, if you want to use the rotary encoder for control on the user interface:
 The rotary encoder triggers the key codes ENTER with a short press of the encoder pushbutton and ESC with a long press. A left turn (counterclockwise) triggers LEFT_ARROW and a right turn (clockwise) triggers RIGHT_ARROW. 
-Unfortunately, the photobooth software does not implement a control option via keyboard commands. However, it allows control through the user interface via HTTP requests. With a little trick, the previous keyboard commands can be converted into HTTP requests. 
-For this purpose you can install the software Evsieve from Kars Mulder (https://github.com/KarsMulder/evsieve). It converts the USB HID device into a virtual event device and allows to execute a script when a predefined key is pressed.
+Unfortunately, the photobooth software has not implemented a control option via keyboard commands. However, it allows control through the user interface via HTTP requests. With a little trick, the previous keyboard commands can be converted into HTTP requests. For this purpose install the software Evsieve from Kars Mulder (https://github.com/KarsMulder/evsieve). It converts the USB HID device into a virtual event device and allows to execute HTTP request commands when predefined keys are pressed.
 
-After having installed the software you can find out the input ID of your "Raspberry Pico W Keyboard" with the follwoing command: 
+After having installed the software, copy the rotary.sh bash script, make it executable with "sudo chmod +x rotary.sh" and change the ID mentioned in the third line with the specific ID of your Pico / Pico W keyboard device. You can find it in the folder /dev/input/by-ID. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh). 
 
-sudo evsieve --input /dev/input/event* --print
+Then add the line "username ALL=NOPASSWD: /usr/local/bin/evsieve" at the end of /etc/sudoers (sudo nano /etc/sudoers).
 
-Just press a push button to find out. Important is the number at the end of "domain = /dev/input/event*".
+Start the script in terminal with "sh /PATH/TO/rotary.sh". Chromium browser should start and the rotary encoder should be avaiable. If you want to use another browser, change the command in the second line.
 
-Copy the bash script rotary.sh, make it executable with sudo chmod +x rotary.sh and change the * in the second line with the event number of the Pico HID keyboard device. Also change the [Photobooth IP] and [Hardware Button Server Port] accoding to your requirements (sudo nano rotary.sh). Finally use systemd unit to run the script on bootup: Change the path of the rotary.sh in the file script.service and copy it to /etc/systemd/system/. After copying enable it via the systemctl command: sudo systemctl enable script.service
+Finally, if you want to start Chomium and the rotary.sh-script autmatically, change or create the photobooth.desktop file:
 
-Any problems? Make sure that the Pico CIRCUITPY drive is mounted automatically...
+sudo nano /etc/xdg/autostart/photobooth.desktop
+
+[Desktop Entry]
+Version=1.3
+Terminal=true
+Type=Application
+Name=Photobooth
+Exec=/path/to/rotary.sh
+Icon=/var/www/html/resources/img/favicon-96x96.png
+StartupNotify=false
+
+
+
+
+
+
+
 
