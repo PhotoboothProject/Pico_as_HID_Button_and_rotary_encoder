@@ -21,7 +21,7 @@ bash download-files.sh
 After running the script, the directory will be structured like this:
 
 ```
-Photobooth_Pi_Pico_W_HTTP_clPhotobooth_Pi_Pico_W_HTTP_client/
+Photobooth_Pi_Pico_Buzzer/
 ├── library_info.txt
 ├── lib/
 │   ├── adafruit_hid/
