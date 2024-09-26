@@ -1,16 +1,55 @@
 # Raspberry Pi Pico / Pico W as HID device: Use of Hardware Buttons and Rotary Encoder
-This a Raspberry Pi Pico / Pico W CiruitPython code for using the Pico / Pico W as a USB HID device in the Photobooth Project of Andreas Blaesius (https://photoboothproject.github.io). You can connect several Buttons or a Rotary Encoder to trigger different actions.
 
-Preparation:
+This a Raspberry Pi Pico / Pico W CiruitPython code for using the Pico / Pico W as a USB HID device in the [Photobooth Project](https://photoboothproject.github.io). You can connect several Buttons or a Rotary Encoder to trigger different actions.
 
-1. Download the latest adafruit_circuitpython_etc.uf2 file and copy it on the CIRCUITPY drive as described here: https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython
-2. Download the latest Adafruit CircuitPython Library Bundle that contains the required CircuitPython libraries for this project. Download the latest 8x.zip file from here: https://github.com/adafruit/Adafruit_CircuitPython_Bundle/releases/
-3. Unzip the zip file and copy the following files and folders from the lib folder to the CIRCUITPY lib folder: adafruit_debouncer.mpy, adafruit_ticks.mpy, adafruit_hid (complete folder)
-4. Download the code.py file and copy it to the Pico´s CIRCUITPY folder.
-5. Have fun!
+## Requirements:
 
-<b>Expected behaviour:</b>  
-Up to 5 buttons can be used to trigger up to 6 different keystrokes for start-picture, start-collage, start-custom, start-print, start-video and shutdown-now as descirbed in the documentation: https://photoboothproject.github.io/FAQ#can-i-use-hardware-button-to-take-a-picture.
+- Download and install  CircuitPython as described [here](https://learn.adafruit.com/pico-w-wifi-with-circuitpython/installing-circuitpython)
+
+## Preparation
+
+1. Download and run the automated downloader to get needed files and libraries for your device.
+
+The downloader also asks for your WiFi credentials to create the 
+`settings.toml` file for you, also the Remotebuzzer Server IP and Port must be entered if asked to update the `code.py` automatically for you.
+
+```sh
+wget -O download-files.sh https://raw.githubusercontent.com/PhotoboothProject/Pico_W_as_remote_button_and_rotary_encoder/main/download-files.sh
+bash download-files.sh
+```
+
+After running the script, the directory will be structured like this:
+
+```
+Photobooth_Pi_Pico_W_HTTP_clPhotobooth_Pi_Pico_W_HTTP_client/
+├── library_info.txt
+├── lib/
+│   ├── adafruit_hid/
+│   │   ├── .mpy files from the HID library
+│   ├── adafruit_connection_manager.mpy
+│   ├── adafruit_debouncer.mpy
+│   ├── adafruit_requests.mpy
+│   └── adafruit_ticks.mpy
+├── code.py
+└── settings.toml
+```
+
+2. Copy the `settings.toml`, `code.py` and `lib` folder to the Pico´s CIRCUITPY folder.
+
+3. Have fun!
+
+## Expected behaviour 
+
+Up to 5 buttons can be used to trigger up to 6 different keystrokes for
+- start-picture
+- start-collage
+- start-custom
+- start-print
+- start-video
+- shutdown-now
+
+as descirbed in the [Photobooth documentation](https://photoboothproject.github.io/FAQ#can-i-use-hardware-button-to-take-a-picture).
+
 There is also LED support for arcarde pushbuttons, meaning if you use a combined LED button, triggering the button will also light up the LED.
 The keystrokes "T" for Take Pic and "C" for Collage are triggered by short and long press. That will only work if the keycodes are defined accordingly in the admin panel:
 
