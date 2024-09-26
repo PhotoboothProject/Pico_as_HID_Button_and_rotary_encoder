@@ -21,6 +21,29 @@ The keystrokes "T" for Take Pic and "C" for Collage are triggered by short and l
 - Key code which triggers custom URL: u = 85
 - Key code which triggers shutdown: s = 83
 
+### Wiring
+
+| Button Number | GP Number | LED GP Number | Short Press Keycode | Long Press Keycode |
+|---------------|-----------|---------------|---------------------|-------------------|
+| 1             | GP10      | GP11          | 84                  | 67                |
+| 2             | GP12      | GP13          | 80                  | 80                |
+| 3             | GP14      | GP15          | 86                  | 86                |
+| 4             | GP16      | GP17          | 85                  | 85                |
+| 5             | GP18      | GP19          | 83                  | 83                |
+
+
+### Keycode mapping
+
+| Key | Keycode |
+|-----|---------|
+| `t` | 84      |
+| `c` | 67      |
+| `p` | 80      |
+| `v` | 86      |
+| `u` | 85      |
+| `s` | 83      |
+
+### TO DO
 Optional, if you want to use the rotary encoder for control on the user interface:
 The rotary encoder triggers the key codes ENTER with a short press of the encoder pushbutton and ESC with a long press. A left turn (counterclockwise) triggers LEFT_ARROW and a right turn (clockwise) triggers RIGHT_ARROW. 
 Unfortunately, the photobooth software does not implement a control option via keyboard commands. However, it allows control through the user interface via HTTP requests. With a little trick, the previous keyboard commands can be converted into HTTP requests. 
